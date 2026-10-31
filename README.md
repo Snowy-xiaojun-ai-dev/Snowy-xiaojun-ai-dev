@@ -16,18 +16,13 @@
 *   **技术栈**: LLaMA-Factory, Qwen2-0.5B, Ollama, GGUF.
 *   **项目亮点**: 完整验证了从 Alpaca 格式数据清洗、LoRA 微调、GGUF 4-bit 量化到 Ollama 本地私有化部署的全流程。
 
-# 企业级自反思智能体 (Agentic RAG)
-
-本项目基于 **LangGraph** 与 **LlamaIndex** 构建，突破了传统 RAG（检索增强生成）的线性流程，引入了**智能体（Agent）架构**。系统具备自主思考、自我反思与联网搜索能力，并集成了 RAGAs 量化评估体系。
-
-## 核心特性
-
-*   **自主反思机制 (Self-Reflection)**：大模型在检索后会自主评估上下文质量。若本地知识库无法回答，将自动触发 `Tavily` 外部搜索引擎进行实时数据获取。
-*   **量化评估指标 (RAGAs)**：引入业界标准评估框架，对系统进行客观打分。
-    *   *Faithfulness (忠实度)*: **0.6667**
-    *   *Answer Relevance (相关性)*: **0.8052**
-*   **透明化推理**：使用 Streamlit 构建前端，完整展示 Agent 的思维链 (Chain of Thought)，让“黑盒”可视化。
-*   **安全工程化**：使用 `python-dotenv` 进行密钥隔离，防止 API Key 泄漏。
+### 3. 企业级自反思智能体 (Agentic RAG & Auto-Evaluation)
+    **[项目代码仓库](https://github.com/Snowy-xiaojun-ai-dev/Agent_RAG_project)**
+*   **技术栈**: LangGraph, LlamaIndex, 智谱GLM-4, Tavily Search API, RAGAs, Streamlit.
+*   **项目亮点**:
+    *   **自主反思机制 (Self-Reflection)**：突破传统固定流程，采用 Agent 架构。大模型可自动评估检索质量，若召回失败，可自主触发“Query 改写”或“调用外部搜索引擎”进行补救（实测成功抓取实时天气数据）。
+    *   **量化评估指标 (RAGAs)**：引入业界标准的评估框架，测试集跑分 **Faithfulness: 0.66, Answer Relevance: 0.80**，用数据客观验证了系统的可靠性。
+    *   **安全工程化**：使用 `dotenv` 进行密钥隔离，防止 API Key 泄漏；前端采用 Streamlit 完整展示 Agent 的思维链（Chain of Thought）与决策路径。
 
 ## 系统架构
 
