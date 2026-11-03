@@ -32,11 +32,11 @@
     *   **商业级产出**：仅输入一句模糊指令，系统自动生成具备数据支撑、痛点打击、情绪价值的“小红书爆款”种草推文。
 ### 5. 企业级 RAG 检索质量量化评估系统 (RAG Evaluation)
 🔗 **[项目代码仓库](https://github.com/Snowy-xiaojun-ai-dev/Enterprise_RAG_Evaluation)**
-*   **技术栈**: LangChain, RAGAs, 智谱GLM-4, ChromaDB, BM25, BGE-Reranker, BGE-Embedding.
+*   **技术栈**: LangChain, RAGAs, 智谱GLM-4, ChromaDB, BM25, BGE-Reranker, FastAPI.
 *   **项目亮点**:
-    *   **数据驱动优化体系**：基于 50 条真实业务黄金测试集，引入 RAGAs 框架，彻底摆脱“凭感觉”评估，建立了标准的 RAG 量化基线。
-    *   **硬核架构演进**：手写 Hybrid Search（BM25 + 向量）与 RRF（倒数排名融合）算法，并接入本地 BGE-Reranker 重排模型。在消融实验对比中，将 **Context Precision（上下文精确率）从 94.67% 强势拉升至 98.33%**，极大剔除了检索废话。
-    *   **深度工程排坑**：成功解决 LangChain Prompt 模板大括号转义冲突，并通过 API 级后处理与强约束 Prompt，大幅降低了大模型生成时的冗余度。
+    *   **数据驱动优化**：构建 50 条自动化黄金测试集，引入 RAGAs 框架，建立工业级 RAG 评测基线。
+    *   **硬核架构演进**：手写 Hybrid Search (BM25 + 向量) 与 RRF 融合算法。结合本地 Reranker 重排，将 **Context Precision (上下文精确率) 从 94.67% 拉升至 98.33%**。
+    *   **MLOps 并发压测**：编写 `aiohttp` 异步压测脚本，实测 FastAPI 异步架构在 10 并发下吞吐量达 **4.96 QPS**，并为后续切换 vLLM 留下了架构演进空间。
 ## 系统架构
 
 `用户提问` -> `本地知识库检索` -> `[大模型自我反思]`
