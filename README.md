@@ -24,7 +24,7 @@
     *   **量化评估指标 (RAGAs)**：引入业界标准的评估框架，测试集跑分 **Faithfulness: 0.66, Answer Relevance: 0.80**，用数据客观验证了系统的可靠性。
     *   **安全工程化**：使用 `dotenv` 进行密钥隔离，防止 API Key 泄漏；前端采用 Streamlit 完整展示 Agent 的思维链（Chain of Thought）与决策路径。
 ### 4. 企业级多智能体协作营销系统 (Multi-Agent Marketing Crew)
-    **[项目代码仓库](你刚生成的Multi_Agent仓库链接)**
+    **[项目代码仓库](https://github.com/Snowy-xiaojun-ai-dev/Multi_Agent_Marketing )**
 *   **技术栈**: CrewAI, 智谱GLM-4 (Function Calling), Tavily Search, Python REPL.
 *   **项目亮点**:
     *   **真实团队协作**：模拟市场调研员、产品专家、数据分析师、文案策划 4 个 AI 角色，按流水线自动接力完成工作。
