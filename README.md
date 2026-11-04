@@ -30,13 +30,14 @@
     *   **真实团队协作**：模拟市场调研员、产品专家、数据分析师、文案策划 4 个 AI 角色，按流水线自动接力完成工作。
     *   **动态工具调用**：Agent 自动评估任务需求，分别调用外部搜索引擎、本地知识库、Python 计算器，实现自动化闭环。
     *   **商业级产出**：仅输入一句模糊指令，系统自动生成具备数据支撑、痛点打击、情绪价值的“小红书爆款”种草推文。
-### 5. 企业级 RAG 检索质量量化评估系统 (RAG Evaluation)
+### 5. 企业级 RAG 检索质量量化评估系统 (RAG Evaluation & Agentic ROI)
 🔗 **[项目代码仓库](https://github.com/Snowy-xiaojun-ai-dev/Enterprise_RAG_Evaluation)**
 *   **技术栈**: LangChain, RAGAs, 智谱GLM-4, ChromaDB, BM25, BGE-Reranker, FastAPI.
 *   **项目亮点**:
-    *   **数据驱动优化**：构建 50 条自动化黄金测试集，引入 RAGAs 框架，建立工业级 RAG 评测基线。
-    *   **硬核架构演进**：手写 Hybrid Search (BM25 + 向量) 与 RRF 融合算法。结合本地 Reranker 重排，将 **Context Precision (上下文精确率) 从 94.67% 拉升至 98.33%**。
-    *   **MLOps 并发压测**：编写 `aiohttp` 异步压测脚本，实测 FastAPI 异步架构在 10 并发下吞吐量达 **4.96 QPS**，并为后续切换 vLLM 留下了架构演进空间。
+    *   **数据驱动优化**：构建 50 条自动化黄金测试集，建立 RAGAs 评测基线。手写 Hybrid Search 与 RRF 融合算法，将 **Context Precision 提升至 98.33%**。
+    *   **Agentic ROI 评估**：设计分层 A/B 测试（单跳/多跳/陷阱），用数据证明了 Agent 循环在复杂任务上的收益与在简单任务上的成本浪费。
+    *   **动态路由架构**：基于测试数据，提出 **Dynamic Routing（动态路由）** 演进策略，实现了准确率与推理成本的帕累托最优。
+    *   **MLOps 压测**：编写 `aiohttp` 异步压测脚本，实测 FastAPI 架构 10 并发下吞吐量达 **4.96 QPS**。
 ## 系统架构
 
 `用户提问` -> `本地知识库检索` -> `[大模型自我反思]`
